@@ -10,7 +10,7 @@
       margin: 0;
       height: 100%;
       background: #000;
-      overflow: hidden;
+      /* overflow: hidden; */
       font-family: monospace;
     }
     canvas {
@@ -107,13 +107,38 @@
       }
       .text { text-align: center; }
     }
+
+    .projects-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .project-card {
+      width: 300px;
+      min-width: 220px;
+      max-width: 90vw;
+      margin: 0;
+      padding: 20px;
+      min-height: 180px;
+    }
+    @media (max-width: 1000px) {
+      .projects-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      .project-card {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+    }
   </style>
 </head>
 <body>
   <canvas id="starBits"></canvas>
 
   <div class="portfolio">
-    <div class="card" id="infoCard">
+    <div class="card tilt-card">
       <img class="avatar" src="https://i.pinimg.com/736x/1c/9f/73/1c9f739836ad61784ace701614e12c26.jpg" alt="Аватар">
       <div class="text">
         <h2>IC Информация</h2>
@@ -156,6 +181,25 @@
         </p>
       </div>
     </div>
+  </div>
+
+  <div class="projects-row">
+    <div class="card tilt-card project-card">
+      <h2>Скрипт для CRMP Radmir RP</h2>
+      <p> DuckTracker_by_Yankay — Универсальный и полностью бесплатный скрипт для охоты на уток! Скрипт обладает продвинутыми настройками, включая аим и ВХ. Также реализована удобная статистика, позволяющая отслеживать количество убитых и подобранных уток. Отличный скрипт, который порадует любого охотника!</p>
+    </div>
+    <div class="card tilt-card project-card">
+      <h2>Скрипт для CRMP Radmir RP</h2>
+      <p> StealthTrigger_by_Yankay — Универсальный и полностью бесплатный скрипт для лесной охоты! Скрипт предлагает удобные настройки, включая аим и ВХ, а также подробную статистику, позволяющую отслеживать количество добытой дичи. Отличный инструмент для настоящих охотников!</p>
+    </div>
+    <div class="card tilt-card project-card">
+      <h2>Скрипт для CRMP Radmir RP</h2>
+      <p>AgroBot_by_Yankay — универсальный и полностью бесплатный скрипт для фермы. Встроенный телепорт к ферме и полная автоматизация работы бота делают его незаменимым инструментом для любого фермера.</p>
+    </div>
+  </div>
+
+  <div style="height: 10vh;"></div>
+  
   <footer style="
     position: fixed;
     bottom: 10px;
@@ -174,7 +218,6 @@
   ">
     © 2025 Yankay Все права защищены
   </footer>
-  </div>
 
   <script>
     const canvas = document.getElementById('starBits');
@@ -244,56 +287,58 @@
 
   <script>
   (() => {
-    const card = document.getElementById('infoCard');
-    if (!card) return;
+    const cards = document.querySelectorAll('.tilt-card');
+    if (!cards.length) return;
 
     const MAX = 14;
     const HOVER_ZOOM = 1.03;
     const EASING = 0.05;
 
-    let targetRX = 0, targetRY = 0, targetS = 1;
-    let currentRX = 0, currentRY = 0, currentS = 1;
+    cards.forEach(card => {
+      let targetRX = 0, targetRY = 0, targetS = 1;
+      let currentRX = 0, currentRY = 0, currentS = 1;
 
-    function setTilt(rx, ry, s) {
-      card.style.setProperty(
-        '--tilt',
-        `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) scale(${s.toFixed(3)})`
-      );
-    }
+      function setTilt(rx, ry, s) {
+        card.style.setProperty(
+          '--tilt',
+          `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) scale(${s.toFixed(3)})`
+        );
+      }
 
-    card.addEventListener('mousemove', (e) => {
-      const r = card.getBoundingClientRect();
-      const x = e.clientX - r.left;
-      const y = e.clientY - r.top;
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
 
-      const dx = (x / r.width) * 2 - 1;
-      const dy = (y / r.height) * 2 - 1;
+        const dx = (x / r.width) * 2 - 1;
+        const dy = (y / r.height) * 2 - 1;
 
-      targetRY = dx * MAX;
-      targetRX = -dy * MAX;
-      targetS = HOVER_ZOOM;
+        targetRY = dx * MAX;
+        targetRX = -dy * MAX;
+        targetS = HOVER_ZOOM;
+      });
+
+      card.addEventListener('mouseenter', () => {
+        targetS = HOVER_ZOOM;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        targetRX = 0;
+        targetRY = 0;
+        targetS = 1;
+      });
+
+      function animate() {
+        currentRX += (targetRX - currentRX) * EASING;
+        currentRY += (targetRY - currentRY) * EASING;
+        currentS  += (targetS  - currentS)  * EASING;
+
+        setTilt(currentRX, currentRY, currentS);
+        requestAnimationFrame(animate);
+      }
+
+      animate();
     });
-
-    card.addEventListener('mouseenter', () => {
-      targetS = HOVER_ZOOM;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      targetRX = 0;
-      targetRY = 0;
-      targetS = 1;
-    });
-
-    function animate() {
-      currentRX += (targetRX - currentRX) * EASING;
-      currentRY += (targetRY - currentRY) * EASING;
-      currentS  += (targetS  - currentS)  * EASING;
-
-      setTilt(currentRX, currentRY, currentS);
-      requestAnimationFrame(animate);
-    }
-
-    animate();
   })();
   </script>
 </body>
