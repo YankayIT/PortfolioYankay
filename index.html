@@ -22,15 +22,14 @@
       z-index: 0;
     }
     .portfolio {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      justify-content: center; /* центрируем всё содержимое */
-      align-items: center;
-      gap: 190px;               /* расстояние между левым и правым блоком */
-      height: 100vh;
-      perspective: 900px;
-      padding-left: 450px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 190px;
+        height: 100vh;
+        perspective: 900px;
     }
     .card {
       display: flex;
@@ -243,69 +242,212 @@
         </p>
       </div>
     </div>
-    <div class="card tilt-card card-right">
-      <div class="text">
-        <h2 style="display:flex; align-items:center; gap:10px;">
-          <!-- SVG иконка новости -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#00ff99" viewBox="0 0 24 24">
-            <path d="M4 19h16V5H4v14zm0-16h16c1.1 0 2 .9 2 2v14a2 
-                    2 0 0 1-2 2H4c-1.1 0-2-.9-2-2V5c0-1.1.9-2 
-                    2-2zm2 3h12v2H6V6zm0 4h12v2H6v-2zm0 4h8v2H6v-2z"/>
-          </svg>
-          НОВОЕ!
-        </h2>
-        <p>
-          <strong>Goblin Laughter</strong> — это универсальная и свежая нейросеть, созданная специально для весёлого троллинга.  
-          Она поможет вам мгновенно генерировать остроумные и дерзкие тексты, подстраиваясь под любую ситуацию.  
-          Отличный инструмент, если хочется добавить немного хаоса и юмора в общение!
-        </p>
-
-        <!-- Кнопка -->
-        <div class="card-buttons">
-          <a href="/goblin" class="btn">Читать</a>
-        </div>
-      </div>
-    </div>
-
   </div>
 
-  <div class="projects-row">
-    <div class="card tilt-card project-card">
-      <h2>Скрипт для CRMP Radmir RP</h2>
-      <p>
-        DuckTracker_by_Yankay — Универсальный и полностью бесплатный скрипт для охоты на уток! 
-        Скрипт обладает продвинутыми настройками, включая аим и ВХ. 
-        Также реализована удобная статистика, позволяющая отслеживать количество убитых и подобранных уток. 
-        Отличный скрипт, который порадует любого охотника!
-      </p>
-      <div class="card-buttons">
-        <a href="https://t.me/whyyankay/5" target="_blank" class="btn">Перейти к скрипту</a>
-      </div>
-    </div>
+  <div class="my-projects-wrapper" style="
+      margin-top: 80px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  ">
 
-    <div class="card tilt-card project-card">
-      <h2>Скрипт для CRMP Radmir RP</h2>
-      <p>
-        StealthTrigger_by_Yankay — Универсальный и полностью бесплатный скрипт для лесной охоты! 
-        Скрипт предлагает удобные настройки, включая аим и ВХ, а также подробную статистику, 
-        позволяющую отслеживать количество добытой дичи. Отличный инструмент для настоящих охотников!
-      </p>
-      <div class="card-buttons">
-        <a href="https://t.me/whyyankay/29" target="_blank" class="btn">Перейти к скрипту</a>
-      </div>
-    </div>
+      <h1 style="
+          color: #00ff99;
+          font-size: 32px;
+          text-shadow: 0 0 10px rgba(0,255,0,0.6);
+          margin-bottom: 30px;
+          font-family: monospace;
+      ">
+          Мои разработки
+      </h1>
 
-    <div class="card tilt-card project-card">
-      <h2>Скрипт для CRMP Radmir RP</h2>
-      <p>
-        AgroBot_by_Yankay — универсальный и полностью бесплатный скрипт для фермы. 
-        Встроенный телепорт к ферме и полная автоматизация работы бота делают его незаменимым инструментом для любого фермера.
-      </p>
-      <div class="card-buttons">
-        <a href="https://t.me/whyyankay/34" target="_blank" class="btn">Перейти к скрипту</a>
+      <div class="sub-block" style="
+          width: 90%;
+          max-width: 1400px;
+          background: rgba(0,255,0,0.05);
+          border: 1px solid rgba(0,255,0,0.3);
+          border-radius: 15px;
+          padding: 25px;
+          margin-bottom: 50px;
+          box-shadow: 0 0 15px rgba(0,255,0,0.3);
+          backdrop-filter: blur(5px);
+      ">
+          <h2 style="
+              color: #00ff99;
+              font-size: 26px;
+              text-align: center;
+              margin-bottom: 20px;
+              font-family: monospace;
+              text-shadow: 0 0 10px rgba(0,255,0,0.6);
+          ">
+              Скрипты Radmir Role-Play
+          </h2>
+
+          <div class="projects-row">
+
+              <div class="card tilt-card project-card">
+                  <h2>Скрипт для CRMP Radmir RP</h2>
+                  <p>
+                      DuckTracker_by_Yankay — Универсальный и полностью бесплатный скрипт для охоты на уток! 
+                      Скрипт обладает продвинутыми настройками, включая аим и ВХ. 
+                      Также реализована удобная статистика, позволяющая отслеживать количество убитых и подобранных уток. 
+                      Отличный скрипт, который порадует любого охотника!
+                  </p>
+                  <div class="card-buttons">
+                      <a href="https://t.me/whyyankay/5" target="_blank" class="btn">Перейти к скрипту</a>
+                  </div>
+              </div>
+
+              <div class="card tilt-card project-card">
+                  <h2>Скрипт для CRMP Radmir RP</h2>
+                  <p>
+                      StealthTrigger_by_Yankay — Универсальный и полностью бесплатный скрипт для лесной охоты! 
+                      Скрипт предлагает удобные настройки, включая аим и ВХ, а также подробную статистику, 
+                      позволяющую отслеживать количество добытой дичи. Отличный инструмент для настоящих охотников!
+                  </p>
+                  <div class="card-buttons">
+                      <a href="https://t.me/whyyankay/29" target="_blank" class="btn">Перейти к скрипту</a>
+                  </div>
+              </div>
+
+              <div class="card tilt-card project-card">
+                  <h2>Скрипт для CRMP Radmir RP</h2>
+                  <p>
+                      AgroBot_by_Yankay — универсальный и полностью бесплатный скрипт для фермы. 
+                      Встроенный телепорт к ферме и полная автоматизация работы бота делают его незаменимым инструментом для любого фермера.
+                  </p>
+                  <div class="card-buttons">
+                      <a href="https://t.me/whyyankay/34" target="_blank" class="btn">Перейти к скрипту</a>
+                  </div>
+              </div>
+
+          </div>
       </div>
-    </div>
   </div>
+
+  <div class="my-projects-wrapper" style="
+      margin-top: 50px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  ">
+
+      <!-- Заголовок -->
+      <h1 style="
+          color: #00ff99;
+          font-size: 32px;
+          text-shadow: 0 0 10px rgba(0,255,0,0.6);
+          margin-bottom: 30px;
+          font-family: monospace;
+      ">
+          Python Скрипты для Majestic Role-Play
+      </h1>
+
+      <!-- ВНУТРЕННИЙ БЛОК -->
+      <div class="sub-block" style="
+          width: 90%;
+          max-width: 1400px;
+          background: rgba(0,255,0,0.05);
+          border: 1px solid rgba(0,255,0,0.3);
+          border-radius: 15px;
+          padding: 25px;
+          margin-bottom: 50px;
+          box-shadow: 0 0 15px rgba(0,255,0,0.3);
+          backdrop-filter: blur(5px);
+      ">
+
+          <!-- Подзаголовок -->
+          <h2 style="
+              color: #00ff99;
+              font-size: 26px;
+              text-align: center;
+              margin-bottom: 20px;
+              font-family: monospace;
+              text-shadow: 0 0 10px rgba(0,255,0,0.6);
+          ">
+              Majestic Role-Play Python Scripts
+          </h2>
+
+          <!-- Ряд карточек (пока пустой, сюда ты добавишь свои Python проекты) -->
+          <div class="projects-row">
+
+              <!-- ПРИМЕР КАРТОЧКИ — можешь удалить или заменить -->
+              <div class="card tilt-card project-card">
+                  <h2>Сбор апельсиинов</h2>
+                  <p>
+                      Скрипт предназначен для автоматического нажатия на апельсины на ферме
+                      в <strong>Majestic RP</strong>, что значительно облегчает процесс фарма и
+                      повышает эффективность сбора ресурсов.
+                  </p>
+
+                  <p>
+                      <strong>Основной функционал:</strong><br>
+                      • Автоматическое определение активной зоны взаимодействия с апельсинами;<br>
+                      • Имитация естественных кликов для обхода античит-систем;<br>
+                      • Возможность настройки скорости и частоты нажатий;<br>
+                      • Поддержка работы в фоновом режиме без вмешательства игрока;<br>
+                      • Гибкая конфигурация под разные разрешения экрана и интерфейс.
+                  </p>
+
+                  <p>
+                      <strong>Особенности и преимущества:</strong><br>
+                      • Надёжная и стабильная работа даже при долгих игровых сессиях;<br>
+                      • Минимальная нагрузка на систему — скрипт использует лёгкие алгоритмы обработки;<br>
+                      • Удобная структура кода для дальнейшего расширения функционала;<br>
+                      • Возможность быстрого включения/выключения горячими клавишами;<br>
+                      • Подходит как для новичков, так и для опытных игроков фермы.
+                  </p>
+
+                  <p>
+                      Скрипт помогает полностью автоматизировать рутинный процесс, увеличивает количество
+                      собранных апельсинов и экономит ваше время, сохраняя максимальную эффективность и стабильность.
+                  </p>
+
+                  <div class="card-buttons">
+                      <a href="https://github.com/YankayIT/SborApelsinowMAJ" target="_blank" class="btn">Перейти к скрипту</a>
+                  </div>
+              </div>
+
+              <div class="card tilt-card project-card">
+                  <h2>AI для прохождения капчи WASD</h2>
+
+                  <p>
+                      Мощная <strong>AI-система</strong>, обученная на примерах капчи с сервера
+                      <strong>Majestic Role-Play</strong>. Скрипт в реальном времени автоматически
+                      анализирует область капчи и определяет, какая клавиша отображена.
+                  </p>
+
+                  <p>
+                      <strong>Основные возможности:</strong><br>
+                      • Распознавание капчи WASD через обученную нейросеть;<br>
+                      • Автоматическое нажатие правильной клавиши;<br>
+                      • Высокая скорость обработки (<1 сек);<br>
+                      • Поддержка всех клиентских окон и разрешений;<br>
+                      • Максимальная точность благодаря обучению модели на реальных данных.
+                  </p>
+
+                  <p>
+                      <strong>Управление:</strong><br>
+                      • <strong>F9</strong> — включение / отключение чтения области экрана;<br>
+                      • Скрипт работает только во время активности капчи и полностью безопасен
+                        для использования.<br>
+                  </p>
+
+                  <p>
+                      Инструмент избавляет от рутины и мгновенно проходит капчу, экономя время
+                      и исключая ошибки при вводе. Полностью автономная, оптимизированная и быстрая AI-система.
+                  </p>
+
+                  <div class="card-buttons">
+                      <a href="https://github.com/YankayIT/AI_Auto_captcha_Majestic" target="_blank" class="btn">Перейти к скрипту</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
 
   <div style="height: 10vh;"></div>
   
@@ -331,7 +473,7 @@
   <script>
     const cursor = document.querySelector(".cursor-dot");
     const trails = [];
-    const trailLength = 12; // сколько "точек хвоста"
+    const trailLength = 12;
 
     for (let i = 0; i < trailLength; i++) {
       const t = document.createElement("div");
@@ -355,7 +497,7 @@
         setTimeout(() => {
           trail.style.left = x + "px";
           trail.style.top = y + "px";
-        }, index * 10); // задержка для эффекта кометы
+        }, index * 10);
       });
       requestAnimationFrame(animateTrail);
     }
